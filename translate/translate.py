@@ -38,12 +38,6 @@ else:
         )
     print "if translated into " + supported_language["en"] + ":"
     print response['TranslatedText'] + "\n"
-#
-#
-# print """
-# Now AWS Translate service only support translate between English (en) and one of the following languages, \
-# or between one of the following languages and English
-# """
 
 
 
