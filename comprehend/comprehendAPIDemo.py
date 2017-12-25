@@ -1,9 +1,6 @@
 #!env python
 """
-
 describe_topics_detection_job()
-
-
 generate_presigned_url()
 list_topics_detection_jobs()
 start_topics_detection_job()
@@ -18,9 +15,9 @@ textList.append("After Kylie had her heart broken by her ex-boyfriend, she felt 
 textList.append("Australia has the world's 9th largest immigrant population, with immigrants accounting for 26% of the population.")
 
 sampleText = []
-file1 = open("./language/Australia_cn.txt", "r")
-file2 = open("./language/Australia_en.txt", "r")
-file3 = open("./language/Australia_fr.txt", "r")
+file1 = open("./text/Australia_cn.txt", "r")
+file2 = open("./text/Australia_en.txt", "r")
+file3 = open("./text/Australia_fr.txt", "r")
 
 sampleText.append(file1.read())
 sampleText.append(file2.read())
@@ -32,7 +29,7 @@ def get_all_files():
     pass
 
 def detect_dominant_language():
-    file = open("./language/Australia_cn.txt","r")
+    file = open("./text/Australia_cn.txt","r")
     content = file.read()
     client.detect_dominant_language(Text=content)
 
@@ -77,7 +74,6 @@ def detect_key_phrases():
         print response
 
 def batch_detect_key_phrases():
-
     response = client.batch_detect_key_phrases(
         Text=textList,
         LanguageCode='en'
