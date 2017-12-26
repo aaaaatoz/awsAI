@@ -43,5 +43,6 @@ def batch_detect_key_phrases():
         print "\n"
 
 if __name__ == "__main__":
-    #detect_key_phrases()
-    batch_detect_key_phrases()
+    # detect_key_phrases()
+    # batch_detect_key_phrases()
+    pass

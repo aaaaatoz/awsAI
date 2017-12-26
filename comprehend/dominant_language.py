@@ -20,7 +20,7 @@ mixFile = open("./text/Australia_mix.txt", "r")
 mixText = mixFile.read()
 
 def detect_dominant_language():
-    print "Sample text is: %s\n" %(mixText)
+    print "Sample text is:\n %s" %(mixText)
     languages = client.detect_dominant_language(Text=mixText)['Languages']
     print "Comprehend thinks the sample text's Language code is __ and a score of " + 10 * "_"
     for language in languages:
@@ -29,7 +29,7 @@ def detect_dominant_language():
 def batch_detect_dominant_language():
     languages = client.batch_detect_dominant_language(TextList=sampleText)['ResultList']
     for result in languages:
-        print "Sample text is: %s" %(sampleText[result['Index']])
+        print "Sample text is:\n%s" %(sampleText[result['Index']])
         print "Comprehend thinks the sample text's Language code is __ and a score of " + 10 * "_"
         for language in result['Languages']:
             print 13 * "\t" + language['LanguageCode'] + 4 * "\t" + str(language['Score'])
